@@ -1,16 +1,14 @@
-import React from 'react';
-import './item-staus-filter.css';
+import React from "react";
+import './app-header/app-header.css';
 
-const ItemStatusFilter = () => {
+const AppHeader = ({toDo, done}) => {
     return (
-        <div className={"btn-group"}>
-            <button type={"button"}
-                    className={"btn btn-info"}>All list</button>
-            <button type={"button"}
-                    className={"btn btn-outline-secondary"}>Active list</button>
-            <button type={"button"}
-                    className={"btn btn-outline-secondary"}>Done</button>
+        <div className={"app-header d-flex"}>
+            <h1>Todo List</h1>
+            <h2>{toDo} more to do, {done} </h2>
         </div>
     );
+
 };
-export default ItemStatusFilter;
+
+export default AppHeader;
