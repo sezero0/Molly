@@ -1,14 +1,25 @@
 import React from "react";
-import TodoListItem from "./todo-list-item";
+import ReactDOM from 'react-dom';
+import AppHeader from "./components/app-header";
+import SearchPanel from "./components/search-panel";
+import TodoList from "./components/todo-list";
 
-const TodoList = () => {
+const App = () => {
+
+    const todoData = [
+        { label: 'Drink Coffee', important: false },
+        { label: 'Implement React Application', important: true },
+        { label: 'Make notes from your stud', important: false },
+        { label: 'Do not drink alchohol', important: false },
+    ];
 
     return (
-        <ul>
-            <li><TodoListItem /></li>
-            <li><TodoListItem /></li>
-        </ul>
+        <div>
+            <AppHeader />
+            <SearchPanel />
+            <TodoList todos =  {todoData} />
+        </div>
     );
-};
-
-export default TodoList;
+}
+    ReactDOM.render(<App />,
+        document.getElementById('root'));
